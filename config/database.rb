@@ -13,7 +13,7 @@ DataMapper.logger = logger
 DataMapper::Property::String.length(255)
 
 case Padrino.env
-  when :development then DataMapper.setup(:default, "mysql://root@localhost/helianthus_development")
-  when :production  then DataMapper.setup(:default, "mysql://root@localhost/helianthus_production")
-  when :test        then DataMapper.setup(:default, "mysql://root@localhost/helianthus_test")
+  when :development then DataMapper.setup(:default, "mysql://tett23:password@192.168.1.101/helianthus_development")
+  when :production  then DataMapper.setup(:default, "mysql://tett23:password@192.168.1.101/helianthus_production")
+  when :test        then DataMapper.setup(:default, "mysql://tett23:password@192.168.1.101/helianthus_test")
 end
