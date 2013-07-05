@@ -25,6 +25,8 @@ gem 'dm-aggregates'
 gem 'dm-types'
 gem 'dm-core'
 
+gem 'resque'
+
 # Test requirements
 gem 'rspec', :group => 'test'
 gem 'rack-test', :require => 'rack/test', :group => 'test'
@@ -39,3 +41,9 @@ gem 'padrino', '0.11.2'
 # %w(core gen helpers cache mailer admin).each do |g|
 #   gem 'padrino-' + g, '0.11.2'
 # end
+
+group :development do
+  gem 'pry'
+  gem 'pry-nav'
+  gem 'pry-remote'
+end
