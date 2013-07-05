@@ -1,0 +1,11 @@
+-# coding: utf-8
+
+-p locals
+%table
+  %tr
+    %th UUID
+    %th 名前
+  -devices.each do |device|
+    %tr
+      %td=device.uuid
+      %td=link_to device.name, url(:devices, :edit, uuid: device.uuid)

@@ -1,0 +1,6 @@
+-# coding: utf-8
+
+%h2 デバイス登録
+
+-form_for :device, url(:devices, :create) do |f|
+  =partial 'devices/form', locals: {f: f}

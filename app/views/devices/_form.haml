@@ -1,0 +1,13 @@
+-# coding: utf-8
+
+%fieldset
+  %legend Device
+  %div
+    =f.label :uuid
+    -uuid_params = {}
+    -uuid_params[:disabled] = 'disabled' if locals[:device] && !device.uuid.blank?
+    =f.text_field :uuid, uuid_params
+    =f.label :name
+    =f.text_field :name
+  =f.submit :save, :class => 'btn btn-primary'
+  =f.submit :cancel, :onclick => "window.location='#{url(:devices, :index)}';return false", :class => :btn
