@@ -1,0 +1,9 @@
+---
+:orm: datamapper
+:test: rspec
+:mock: none
+:script: jquery
+:renderer: haml
+:stylesheet: sass
+:namespace: Helianthus
+:migration_format: number
