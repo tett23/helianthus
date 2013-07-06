@@ -3,4 +3,4 @@
 %h2="デバイス編集「#{@device.name}」"
 
 -form_for :device, url(:devices, :update), method: :put do |f|
-  =partial 'devices/form', locals: {f: f, device: @device}
+  =partial 'devices/form', locals: {f: f, device: @device, attribute: @attribute}

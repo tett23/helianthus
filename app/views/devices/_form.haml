@@ -1,13 +1,29 @@
 -# coding: utf-8
 
+=partial 'parts/errors', locals: {item: device}
+=partial 'parts/errors', locals: {item: attribute}
+
 %fieldset
   %legend Device
   %div
     =f.label :uuid
     -uuid_params = {}
     -uuid_params[:disabled] = 'disabled' if locals[:device] && !device.uuid.blank?
+    =f.hidden_field :uuid, value: device.uuid
     =f.text_field :uuid, uuid_params
     =f.label :name
     =f.text_field :name
+  %div
+    =f.label :'attribute[head]'
+    =f.text_field :'attribute[head]', value: attribute.head
+    =f.label :'attribute[is_debug]'
+    =f.check_box :'attribute[is_debug]', checked: attribute.is_debug
+    =f.label :'attribute[is_auto_upgrade]'
+    =f.check_box :'attribute[is_auto_upgrade]', checked: attribute.is_auto_upgrade
+    =f.label :'attribute[repos]'
+    =f.text_field :'attribute[repos]', value: attribute.repos
+    =f.label :'attribute[model_name]'
+    =f.text_field :'attribute[model_name]', disabled: 'disabled', value: attribute.model_name
+    =f.hidden_field :'attribute[id]', value: attribute.id
   =f.submit :save, :class => 'btn btn-primary'
   =f.submit :cancel, :onclick => "window.location='#{url(:devices, :index)}';return false", :class => :btn

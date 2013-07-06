@@ -1,0 +1,6 @@
+-# coding: utf-8
+
+-if locals[:item]
+  %ul
+    -item.errors.each do |column, error|
+      %li="#{column}: #{error}"

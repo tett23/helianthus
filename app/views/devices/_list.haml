@@ -1,6 +1,5 @@
 -# coding: utf-8
 
--p locals
 %table
   %tr
     %th UUID
@@ -8,4 +7,4 @@
   -devices.each do |device|
     %tr
       %td=device.uuid
-      %td=link_to device.name, url(:devices, :edit, uuid: device.uuid)
+      %td=link_to device.name, url(:devices, :show, uuid: device.uuid)

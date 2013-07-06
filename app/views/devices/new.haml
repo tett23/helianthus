@@ -3,4 +3,4 @@
 %h2 デバイス登録
 
 -form_for :device, url(:devices, :create) do |f|
-  =partial 'devices/form', locals: {f: f}
+  =partial 'devices/form', locals: {f: f, device: @device, attribute: @attribute}

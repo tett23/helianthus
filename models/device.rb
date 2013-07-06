@@ -7,6 +7,8 @@ class Device
   property :uuid, String, unique: true
   property :name, String
 
+  belongs_to :attribute, 'DeviceAttribute', required: false
+
   def self.list
     self.all
   end
