@@ -4,8 +4,12 @@ module Helianthus
     register Padrino::Rendering
     register Padrino::Mailer
     register Padrino::Helpers
+    use Rack::Protection
 
     enable :sessions
+    set :protection, true
+    set :protect_from_csrf, true
+    set :allow_disabled_csrf, true
 
     ##
     # Caching support
