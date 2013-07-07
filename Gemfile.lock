@@ -163,3 +163,4 @@ DEPENDENCIES
   resque
   rspec
   sass
+  uuidtools

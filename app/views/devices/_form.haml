@@ -7,10 +7,8 @@
   %legend Device
   %div
     =f.label :uuid
-    -uuid_params = {}
-    -uuid_params[:disabled] = 'disabled' if locals[:device] && !device.uuid.blank?
-    =f.hidden_field :uuid, value: device.uuid
-    =f.text_field :uuid, uuid_params
+    =f.hidden_field :uuid, value: device.uuid unless device.uuid.nil?
+    =f.text_field :uuid, disabled: 'disabled'
     =f.label :name
     =f.text_field :name
   %div

@@ -29,7 +29,7 @@ Helianthus::App.controllers :devices do
     @attribute = DeviceAttribute.new(attribute)
 
     if @device.save && @attribute.save
-      Device.get(@device.id).update(attribute: @attribute)
+      Device.get(@device.uuid).update(attribute: @attribute)
 
       flash[:success] = "UUID「#{@device.name}」を作成しました"
       redirect url(:devices, :show, uuid: @device.uuid)

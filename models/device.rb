@@ -3,8 +3,9 @@
 class Device
   include DataMapper::Resource
 
-  property :id, Serial
-  property :uuid, String, unique: true
+  property :uuid, UUID, key: true, default: (proc do
+    UUIDTools::UUID.random_create.to_s
+  end)
   property :name, String
 
   belongs_to :attribute, 'DeviceAttribute', required: false
