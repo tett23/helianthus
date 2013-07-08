@@ -10,7 +10,6 @@ Helianthus::App.controllers :images do
   get :show, with: :id, provides: [:html, :jpg] do
     @image = Image.get(params[:id])
 
-    p content_type
     case content_type
     when :html
       render :'images/show'
