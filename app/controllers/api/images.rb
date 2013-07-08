@@ -4,18 +4,15 @@ Helianthus::App.controllers :api_images do
   post :upload, map: '/api/images/upload', csrf_protection: false do
     return {
       result: true,
+      image_id: nil,
       message: 'blank image'
     } if params[:image].blank?
 
-    File.open('/home/tett23/Dropbox/tmp/'+Digest::SHA1.hexdigest(Time.now.to_i.to_s+rand().to_s)+'.jpg', 'wb') do |f|
-      f.print(Glitch.glitch(params[:image][:tempfile].read))
-    end
+    image = Image.create(
+      original_filename: params[:image][:filename]
+    )
+    open(image.outpath, 'wb').print(params[:image][:tempfile].read)
 
-    {result: true}.to_json
-  end
-
-
-  private
-  def filename()
+    {result: true, image_id: image.id}.to_json
   end
 end

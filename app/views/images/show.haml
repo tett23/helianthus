@@ -1,0 +1,5 @@
+-# coding: utf-8
+
+%p=@image.original_filename
+%p=@image.created_at
+%img{src: url(:images, :show, id: @image.id, format: :jpg, glitch: true)}

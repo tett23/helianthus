@@ -27,6 +27,7 @@ gem 'dm-core'
 gem 'uuidtools'
 
 gem 'resque'
+gem 'mime-types'
 
 # Test requirements
 gem 'rspec', :group => 'test'
