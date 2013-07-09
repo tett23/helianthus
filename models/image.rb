@@ -21,13 +21,7 @@ class Image
   end
 
   def glitch
-    glitch_chars = ('a'..'z').to_a
-    split_image(1000).map do |bytes|
-      bytes.gsub!(glitch_chars.sample, glitch_chars.sample) if rand(10).zero?
-      bytes.gsub!('9', '1') if rand(10).zero?
-
-      bytes
-    end
+    open(self.outpath,'rb').read.glitch
   end
 
   def outpath
@@ -36,12 +30,5 @@ class Image
 
   def public_path
     "/images/#{self.path}"
-  end
-
-  private
-  def split_image(count)
-    file = open(self.outpath, 'rb').read
-
-    file.split(//).each_slice(count).map {|a| a.join}
   end
 end
