@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/tett23/glitch.git
+  revision: e4908dea75c5bdec993d4646852d50bff2220e20
+  specs:
+    glitch (0.0.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -153,6 +159,7 @@ DEPENDENCIES
   dm-timestamps
   dm-types
   dm-validations
+  glitch!
   haml
   mime-types
   padrino (= 0.11.2)

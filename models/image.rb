@@ -21,7 +21,7 @@ class Image
   end
 
   def glitch
-    open(self.outpath,'rb').read.glitch
+    open(self.outpath,'rb').read.to_glitch
   end
 
   def outpath

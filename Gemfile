@@ -28,6 +28,7 @@ gem 'uuidtools'
 
 gem 'resque'
 gem 'mime-types'
+gem 'glitch', github: 'tett23/glitch'
 
 # Test requirements
 gem 'rspec', :group => 'test'
